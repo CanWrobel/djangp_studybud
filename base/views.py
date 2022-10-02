@@ -1,12 +1,14 @@
 from django.shortcuts import render
+from .models import Room
 
-rooms = [
-    {'id':1, 'name': 'Lets learn Python!'},
-    {'id':2, 'name': 'Lets learn Django!'},
-    {'id':3, 'name': 'Lets learn CSS!'},
-]
+# rooms = [
+#     {'id':1, 'name': 'Lets learn Python!'},
+#     {'id':2, 'name': 'Lets learn Django!'},
+#     {'id':3, 'name': 'Lets learn CSS!'},
+# ]
 
 def home(request):
+    rooms = Room.objects
     return render(request, 'base/home.html', { 'rooms':rooms })
 
 def room(request, pk):
